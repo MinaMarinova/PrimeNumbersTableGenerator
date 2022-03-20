@@ -1,12 +1,14 @@
 ﻿using PrimeNumbersTableGenerator;
 
-bool isInputValid = int.TryParse(Console.ReadLine(), out int input);
+bool isInputValid = int.TryParse(Console.ReadLine(), out int primeNumbersCountInput);
 
-if (isInputValid && input > 0)
+if (isInputValid && primeNumbersCountInput > 0)
 {
     try
     {
-        int?[,] tableWithPrimeNumbersFilled = TableGenerator.FillTableWithPrimeNumbers(input);
+        int?[,] tableWithPrimeNumbersFilled = TableGenerator.GetTableWithPrimeNumbersFilled(primeNumbersCountInput);
+        List<List<object?>> multiplicationTable = TableGenerator.GetMultiplicationTableFilled(tableWithPrimeNumbersFilled);
+        TableGenerator.Print(multiplicationTable);
     }
     catch (Exception)
     {
