@@ -5,12 +5,12 @@
 
     internal static class TableGenerator
     {
-        internal static int?[,] GetTableWithPrimeNumbersFilled(int input)
+        internal static int?[,] GetTableWithPrimeNumbersFilled(int primeNumbersCountInput)
         {
-            int?[,] table = new int?[input + 1, input + 1];
+            int?[,] table = new int?[primeNumbersCountInput + 1, primeNumbersCountInput + 1];
             int primeNumbersCount = 0;
             int counter = 0;
-            while (primeNumbersCount < input)
+            while (primeNumbersCount < primeNumbersCountInput)
             {
                 if (IntegerMath.IsPrime(counter))
                 {
